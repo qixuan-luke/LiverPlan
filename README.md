@@ -20,6 +20,8 @@
 <p align="center">
   <a href="https://arxiv.org/abs/2608.04707"><strong>Paper (arXiv)</strong></a>
   &nbsp; | &nbsp;
+  <a href="https://qixuan-luke.github.io/LiverPlan/"><strong>Project Page</strong></a>
+  &nbsp; | &nbsp;
   <a href="https://osf.io/k8v3n/overview?view_only=3249373f8f974d6196b687b136ac8f2e"><strong>Demo Video &amp; Supplementary Material</strong></a>
 </p>
 
