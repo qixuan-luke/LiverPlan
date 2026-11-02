@@ -4,105 +4,590 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="LiverPlan: a stage-adaptive immersive visual analytics framework for anatomical liver resection planning. IEEE VIS 2026.">
-  <meta name="theme-color" content="#fafaf8">
+  <meta name="theme-color" content="#f8f7f4">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="LiverPlan | IEEE VIS 2026">
+  <meta property="og:description" content="A Stage-Adaptive Immersive Visual Analytics Framework for Anatomical Liver Surgical Planning.">
+  <meta property="og:url" content="https://qixuan-luke.github.io/LiverPlan/">
+  <meta property="og:image" content="https://qixuan-luke.github.io/LiverPlan/assets/figures/framework-overview.png">
+  <meta name="twitter:card" content="summary_large_image">
   <title>LiverPlan | IEEE VIS 2026</title>
   <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="assets/fonts/newsreader.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="assets/fonts/instrument-sans.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
 <body>
 <a class="skip-link" href="#main">Skip to content</a>
+
 <header class="site-header">
-  <div class="nav-shell">
-    <a class="wordmark" href="#top" aria-label="LiverPlan home">Liver<span>Plan</span></a>
+  <div class="nav-shell wrap">
+    <a class="wordmark" href="#top" aria-label="LiverPlan home">LiverPlan</a>
     <nav class="primary-nav" aria-label="Main navigation">
-      <a href="#workflow">Workflow</a>
-      <a href="#design-study">Design study</a>
-      <a href="#evaluation">Evaluation</a>
-      <a href="#resources">Resources</a>
-      <a class="nav-paper" href="https://arxiv.org/abs/2608.04707" target="_blank" rel="noopener noreferrer">Paper <span aria-hidden="true">↗</span></a>
+      <a href="#overview"><span class="n">01</span>Overview</a>
+      <a href="#design-study"><span class="n">02</span>Design Study</a>
+      <a href="#method"><span class="n">03</span>Method</a>
+      <a href="#evaluation"><span class="n">04</span>Evaluation</a>
+      <a href="#citation"><span class="n">05</span>Citation</a>
+      <a class="nav-paper" href="https://arxiv.org/abs/2608.04707" target="_blank" rel="noopener noreferrer">Paper ↗</a>
     </nav>
   </div>
 </header>
+
 <main id="main">
-  <section class="hero section-wrap" id="top" aria-labelledby="paper-title">
-    <p class="eyebrow">IEEE VIS 2026 <span>To appear in IEEE TVCG</span></p>
-    <h1 id="paper-title"><span class="hero-name">LiverPlan</span><span class="hero-title">A Stage-Adaptive Immersive Visual Analytics Framework for Anatomical Liver Surgical Planning</span></h1>
-    <p class="hero-summary">Understand patient anatomy. Refine plans with embedded safety feedback. Anticipate vessel encounters in an immersive 3D workspace.</p>
-    <div class="authors" aria-label="Authors">
-      <span>Qixuan Liu<sup>1</sup></span><span>Shi Qiu<sup>1</sup></span><span>Xiwen Wu<sup>2</sup></span><span>Yuqi Tong<sup>1</sup></span><span>Yinqiao Wang<sup>1</sup></span><span class="author-break" aria-hidden="true"></span><span>Ruiyang Li<sup>1</sup></span><span>Jialun Pei<sup>1</sup></span><span>Shengdong Zhao<sup>3</sup></span><span>Chi-Wing Fu<sup>1</sup></span><span>Pheng-Ann Heng<sup>1</sup></span>
-    </div>
+  <!-- Hero -->
+  <section class="hero wrap" id="top" aria-labelledby="paper-title">
+    <p class="venue"><span>IEEE VIS 2026</span></p>
+    <h1 id="paper-title">
+      <span class="hero-name">LiverPlan</span>
+      <span class="hero-title">A Stage-Adaptive Immersive Visual Analytics Framework for Anatomical Liver Surgical Planning</span>
+    </h1>
+    <ul class="authors" aria-label="Authors">
+      <li>Qixuan Liu<sup>1</sup></li><li>Shi Qiu<sup>1</sup></li><li>Xiwen Wu<sup>2</sup></li><li>Yuqi Tong<sup>1</sup></li><li>Yinqiao Wang<sup>1</sup></li><li>Ruiyang Li<sup>1</sup></li><li>Jialun Pei<sup>1</sup></li><li>Shengdong Zhao<sup>3</sup></li><li>Chi-Wing Fu<sup>1</sup></li><li>Pheng-Ann Heng<sup>1</sup></li>
+    </ul>
     <div class="affiliations">
-      <p><sup>1</sup> Institute of Medical Intelligence and XR (IMIXR), The Chinese University of Hong Kong</p>
-      <p><sup>2</sup> Zhujiang Hospital, Southern Medical University <span class="affiliation-separator" aria-hidden="true">/</span> <sup>3</sup> City University of Hong Kong</p>
+      <span><sup>1</sup> Institute of Medical Intelligence and XR (IMIXR), The Chinese University of Hong Kong</span>
+      <span><sup>2</sup> Zhujiang Hospital, Southern Medical University</span>
+      <span><sup>3</sup> City University of Hong Kong</span>
     </div>
-    <div class="hero-links">
-      <a class="button primary" href="https://arxiv.org/abs/2608.04707" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M7 3h7l4 4v14H7zM14 3v5h4M10 12h5M10 16h5"/></svg>Paper (arXiv)</a>
-      <a class="button secondary" href="https://osf.io/k8v3n/overview?view_only=3249373f8f974d6196b687b136ac8f2e" target="_blank" rel="noopener noreferrer"><svg aria-hidden="true" viewBox="0 0 24 24"><path d="M9 6l10 6-10 6z"/></svg>Demo &amp; Supplementary Material</a>
-      <a class="button secondary" href="https://github.com/qixuan-luke/LiverPlan" target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+    <div class="button-row">
+      <a class="button primary" href="https://arxiv.org/abs/2608.04707" target="_blank" rel="noopener noreferrer">Paper (arXiv) ↗</a>
+      <a class="button" href="https://osf.io/k8v3n/overview?view_only=3249373f8f974d6196b687b136ac8f2e" target="_blank" rel="noopener noreferrer">Demo &amp; Supplementary ↗</a>
+      <a class="button" href="https://github.com/qixuan-luke/LiverPlan" target="_blank" rel="noopener noreferrer">GitHub ↗</a>
     </div>
   </section>
 
-  <section class="section-wrap" id="workflow" aria-labelledby="workflow-title">
-    <div class="section-heading">
-      <p class="section-kicker">The workflow</p>
-      <h2 id="workflow-title">Different stages.<br>Different ways of reasoning.</h2>
-      <p>Anatomical liver resection planning moves from understanding complex anatomy to balancing safety criteria and preparing for surgery. LiverPlan adapts visualization and interaction to the cognitive demands of each stage.</p>
-    </div>
-    <div class="overview-block">
-      <figure><button class="figure-open" type="button" data-title="LiverPlan framework" data-caption="Patient data feeds a stage-adaptive workflow for spatial analysis, resection planning, and intersection analysis." aria-label="Enlarge the LiverPlan framework"><img src="assets/figures/framework-overview.png" alt="LiverPlan framework overview connecting patient data with three planning stages." loading="lazy"><span class="zoom-hint" aria-hidden="true">View full size <span>↗</span></span></button><figcaption>Visualization and interaction tailored to each planning stage.</figcaption></figure>
-    </div>
-    <section class="workflow-stage" id="stage-1" data-stage="1" aria-labelledby="stage-1-heading">
-      <header class="stage-intro"><p class="stage-label">Stage 01 / Tumor-Vessel Spatial Analysis</p><h3 id="stage-1-heading">Enhanced visualization of<br>tumor-vessel spatial relationships.</h3></header>
-      <div class="design-demo " id="anatomical-views"><div class="pair-intro"><h4>Explore anatomy at different levels.</h4><p>Whole-liver and liver-segment representations expose tumor extent and segment morphology while retaining the surrounding anatomical context.</p></div><div class="paired-media"><figure class="design-media"><p class="media-label">Visualization design</p><button class="figure-open" type="button" data-title="Anatomical representations for spatial analysis" data-full-alt="Whole-liver and liver-segment views, adjustable vessel thickness, and a comparison of standard rendering with the hue-preserving strategy." data-caption="Complementary macroscopic representations support inspection of the tumor and liver segments." aria-label="Enlarge: Anatomical representations for spatial analysis"><span class="figure-crop crop-macroscopic"><img src="assets/figures/stage1-anatomical-representations.png" alt="Macroscopic representations: whole-liver and liver-segment modes with different transparency settings." loading="lazy"></span><span class="zoom-hint" aria-hidden="true">View full size <span>↗</span></span></button><figcaption>Complementary macroscopic representations support inspection of the tumor and liver segments.</figcaption></figure><div class="demo-player"><p class="media-label">In LiverPlan <span>20 s</span></p><video id="stage1-macroscopic" controls muted loop playsinline preload="metadata" poster="assets/media/stage1-macroscopic.jpg" aria-label="Recorded demonstration: Anatomical views"><source src="assets/media/stage1-macroscopic.mp4" type="video/mp4">Your browser does not support inline video. <a href="assets/media/stage1-macroscopic.mp4">Open the demonstration.</a></video><div class="player-toolbar"><p class="video-note">Switch between anatomical representations to inspect the tumor and individual liver segments.</p><div class="playback"><label for="speed-stage1-macroscopic">Speed</label><select id="speed-stage1-macroscopic" data-video="stage1-macroscopic" aria-label="Playback speed: Anatomical views"><option value="1">1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></div></div></div></div></div>
-      <div class="design-demo " id="vessel-relationships"><div class="pair-intro"><h4>Reveal internal tumor-vessel relationships.</h4><p>Adjustable vessel thickness reveals structures that would otherwise be occluded. Hue-preserving rendering retains diagnostic colors through overlapping surfaces.</p></div><div class="paired-media"><figure class="design-media"><p class="media-label">Visualization design</p><button class="figure-open" type="button" data-title="Anatomical representations for spatial analysis" data-full-alt="Whole-liver and liver-segment views, adjustable vessel thickness, and a comparison of standard rendering with the hue-preserving strategy." data-caption="Adjustable vessel thickness and hue-preserving rendering provide complementary support for spatial analysis." aria-label="Enlarge: Anatomical representations for spatial analysis"><span class="figure-crop crop-microscopic"><img src="assets/figures/stage1-anatomical-representations.png" alt="Microscopic vessel representations and a comparison of standard rendering with the hue-preserving strategy." loading="lazy"></span><span class="zoom-hint" aria-hidden="true">View full size <span>↗</span></span></button><figcaption>Adjustable vessel thickness and hue-preserving rendering provide complementary support for spatial analysis.</figcaption></figure><div class="demo-player"><p class="media-label">In LiverPlan <span>18 s</span></p><video id="stage1-microscopic" controls muted loop playsinline preload="metadata" poster="assets/media/stage1-microscopic.jpg" aria-label="Recorded demonstration: Vessel relationships"><source src="assets/media/stage1-microscopic.mp4" type="video/mp4">Your browser does not support inline video. <a href="assets/media/stage1-microscopic.mp4">Open the demonstration.</a></video><div class="player-toolbar"><p class="video-note">Reduce vessel thickness to reveal internal tumor-vessel relationships while retaining the surrounding vascular context.</p><div class="playback"><label for="speed-stage1-microscopic">Speed</label><select id="speed-stage1-microscopic" data-video="stage1-microscopic" aria-label="Playback speed: Vessel relationships"><option value="1">1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></div></div></div></div></div>
-      <div class="design-demo " id="target-selection"><div class="pair-intro"><h4>Select and revise candidate target segments.</h4><p>Linked selection controls and the 3D anatomy help surgeons identify the target segments for resection planning.</p></div><div class="paired-media"><figure class="design-media"><p class="media-label">Visualization design</p><button class="figure-open" type="button" data-title="Target segment selection" data-caption="The selection interface and 3D highlighting connect candidate target segments to their anatomical locations." aria-label="Enlarge: Target segment selection"><img src="assets/figures/stage1-target-segment-selection.png" alt="Target segment selection interface linked to the 3D liver anatomy." loading="lazy"><span class="zoom-hint" aria-hidden="true">View full size <span>↗</span></span></button><figcaption>The selection interface and 3D highlighting connect candidate target segments to their anatomical locations.</figcaption></figure><div class="demo-player"><p class="media-label">In LiverPlan <span>13 s</span></p><video id="stage1-target-selection" controls muted loop playsinline preload="metadata" poster="assets/media/stage1-target-selection.jpg" aria-label="Recorded demonstration: Target segment selection"><source src="assets/media/stage1-target-selection.mp4" type="video/mp4">Your browser does not support inline video. <a href="assets/media/stage1-target-selection.mp4">Open the demonstration.</a></video><div class="player-toolbar"><p class="video-note">Select and revise candidate target segments, with the selection panel and 3D anatomy staying linked.</p><div class="playback"><label for="speed-stage1-target-selection">Speed</label><select id="speed-stage1-target-selection" data-video="stage1-target-selection" aria-label="Playback speed: Target segment selection"><option value="1">1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></div></div></div></div></div>
-    </section>
-    <section class="workflow-stage" id="stage-2" data-stage="2" aria-labelledby="stage-2-heading">
-      <header class="stage-intro"><p class="stage-label">Stage 02 / Interactive Resection Planning</p><h3 id="stage-2-heading">Real-time, embedded visual feedback<br>on critical safety criteria.</h3><p>Critical safety criteria stay within the focused 3D view, supporting multi-constraint reasoning as surgeons refine a resection plan.</p></header>
-      <div class="paired-media safety-pair"><figure class="design-media"><p class="media-label">Visualization design</p><button class="figure-open" type="button" data-title="Embedded safety criteria visualization" data-caption="Remnant volume, resection margin, and target segment removal are visualized close to the anatomy." aria-label="Enlarge: Embedded safety criteria visualization"><img src="assets/figures/stage2-embedded-visual-feedback.png" alt="Embedded safety criteria visualization with Functional Liver Remnant outline, Target Segment Complete Removal contours, and Resection Margin feedback." loading="lazy"><span class="zoom-hint" aria-hidden="true">View full size <span>↗</span></span></button><figcaption>Remnant volume, resection margin, and target segment removal are visualized close to the anatomy.</figcaption></figure><div class="demo-player"><p class="media-label">In LiverPlan <span>24 s</span></p><video id="stage2-safety-feedback" controls muted loop playsinline preload="metadata" poster="assets/media/stage2-safety-feedback.jpg" aria-label="Recorded demonstration: Embedded safety feedback"><source src="assets/media/stage2-safety-feedback.mp4" type="video/mp4">Your browser does not support inline video. <a href="assets/media/stage2-safety-feedback.mp4">Open the demonstration.</a></video><div class="player-toolbar"><p class="video-note">As a resection plane moves, the remnant outline changes color to flag a Functional Liver Remnant threshold violation and support further refinement.</p><div class="playback"><label for="speed-stage2-safety-feedback">Speed</label><select id="speed-stage2-safety-feedback" data-video="stage2-safety-feedback" aria-label="Playback speed: Embedded safety feedback"><option value="1">1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></div></div><ul class="feature-list"><li><strong>Functional Liver Remnant</strong><span>A color-coded outline and numerical indicator show the remaining liver volume.</span></li><li><strong>Resection Margin</strong><span>A connector line or surface distance map shows tumor-to-plane distance.</span></li><li><strong>Target Segment Complete Removal</strong><span>Dynamic contours indicate when a resection plane intersects a target segment.</span></li></ul></div></div>
-    </section>
-    <section class="workflow-stage" id="stage-3" data-stage="3" aria-labelledby="stage-3-heading">
-      <header class="stage-intro"><p class="stage-label">Stage 03 / Plane-Vessel Intersection Analysis</p><h3 id="stage-3-heading">Enhanced spatial understanding<br>of the resection plan.</h3><p>Focus+Context plane-vessel intersection visualization shows the vascular implications of the finalized plan, supporting an anticipatory mental model for surgery preparation.</p></header>
-      <div class="paired-media intersection-pair"><figure class="design-media"><p class="media-label">Visualization design</p><button class="figure-open" type="button" data-title="Focus+Context plane-vessel intersection visualization" data-caption="In the default view, gray distinguishes resected branches; preserved branches retain diagnostic hues. True-scale red collars reveal intersection locations and vessel caliber." aria-label="Enlarge: Focus+Context plane-vessel intersection visualization"><img src="assets/figures/stage3-plane-vessel-intersections.png" alt="Finalized resection plan with Default and Inversion vessel context views and a magnified view of true-scale red intersection collars." loading="lazy"><span class="zoom-hint" aria-hidden="true">View full size <span>↗</span></span></button><figcaption>In the default view, gray distinguishes resected branches; preserved branches retain diagnostic hues. True-scale red collars reveal intersection locations and vessel caliber.</figcaption></figure><div class="demo-player"><p class="media-label">In LiverPlan <span>12 s</span></p><video id="stage3-intersections" controls muted loop playsinline preload="metadata" poster="assets/media/stage3-intersections.jpg" aria-label="Recorded demonstration: Inspect the finalized plan"><source src="assets/media/stage3-intersections.mp4" type="video/mp4">Your browser does not support inline video. <a href="assets/media/stage3-intersections.mp4">Open the demonstration.</a></video><div class="player-toolbar"><p class="video-note">Rotate the finalized anatomy to inspect its vascular context. The magnified design view shows the intersection collars in detail.</p><div class="playback"><label for="speed-stage3-intersections">Speed</label><select id="speed-stage3-intersections" data-video="stage3-intersections" aria-label="Playback speed: Inspect the finalized plan"><option value="1">1×</option><option value="1.5">1.5×</option><option value="2">2×</option></select></div></div></div></div>
-    </section>
-  </section>
+  <div class="teaser">
+    <figure>
+      <button class="figure-open" type="button" data-title="LiverPlan framework" data-caption="Patient data feeds a stage-adaptive workflow for spatial analysis, resection planning, and intersection analysis." aria-label="Enlarge the LiverPlan framework">
+        <img src="assets/figures/framework-overview.png" alt="LiverPlan framework overview connecting patient data with three planning stages." width="2600" height="726">
+        <span class="zoom-hint" aria-hidden="true">View full size</span>
+      </button>
+      <figcaption class="cap"><b>Framework overview.</b> Patient data feeds a stage-adaptive workflow for spatial analysis, resection planning, and intersection analysis.</figcaption>
+    </figure>
+  </div>
 
-  <section class="section-wrap" id="design-study" aria-labelledby="design-title">
-    <div class="section-heading"><p class="section-kicker">Design study</p><h2 id="design-title">Grounded in clinical reasoning.</h2><p>Clinical collaboration shaped the workflow before it shaped the interface.</p></div>
-    <div class="design-layout">
-      <div class="design-lead"><div class="big-fact"><strong>8 <span>months</span></strong><span>of iterative design with<br>2 hepatobiliary surgeons</span></div><p>We worked with an attending surgeon and a resident surgeon to understand how anatomical discovery, constraint reasoning, and surgery preparation unfold in practice.</p></div>
-      <div class="design-timeline">
-        <article class="timeline-item"><p class="duration">12 weeks</p><h3>Clinical Discovery</h3><p>Interviews, surgical planning seminars, and observation of a live liver resection surgery revealed clinical practices and visualization bottlenecks in desktop tools.</p></article>
-        <article class="timeline-item"><p class="duration">20 weeks</p><h3>Iterative Design &amp; Refinement</h3><p>Repeated design sessions, consultations, and expert validation translated these findings into a stage-adaptive visual analytics framework.</p></article>
+  <!-- 01 Overview -->
+  <section class="section wrap" id="overview" aria-labelledby="overview-title">
+    <div class="section-head"><span class="num">01</span><h2 id="overview-title">Overview</h2></div>
+    <p class="tldr">LiverPlan is a stage-adaptive immersive visual analytics framework for anatomical liver resection planning, with visualization and interaction tailored to the cognitive demands of each planning stage.</p>
+    <p class="tldr-sub">Surgeons explore and refine the plan in an immersive 3D workspace using a standalone extended reality headset.</p>
+
+    <div class="stage-cards">
+      <a class="stage-card" href="#stage-1" data-stage="1">
+        <span class="mono-label is-stage">Stage 1</span>
+        <span class="name">Tumor-Vessel Spatial Analysis</span>
+        <span class="desc">Context-preserving focus and hue-preserving rendering for anatomical discovery.</span>
+        <span class="out">Output → target liver segments</span>
+      </a>
+      <a class="stage-card" href="#stage-2" data-stage="2">
+        <span class="mono-label is-stage">Stage 2</span>
+        <span class="name">Interactive Resection Planning</span>
+        <span class="desc">Direct 3D resection plane manipulation with real-time, embedded visual feedback on critical safety criteria.</span>
+        <span class="out">Output → finalized resection planes</span>
+      </a>
+      <a class="stage-card" href="#stage-3" data-stage="3">
+        <span class="mono-label is-stage">Stage 3</span>
+        <span class="name">Plane-Vessel Intersection Analysis</span>
+        <span class="desc">Explicit plane-vessel intersection visualization for anticipatory surgery preparation.</span>
+        <span class="out">Output → anticipatory mental model</span>
+      </a>
+    </div>
+
+    <div class="kpi-band">
+      <div><p class="val">−51.69<span>%</span></p><p class="label">Task completion time</p></div>
+      <div><p class="val">−32.63<span>%</span></p><p class="label">Perceived cognitive workload</p></div>
+      <div><p class="val">76.25</p><p class="label">System Usability Scale (from 38.44)</p></div>
+      <div class="note"><p>Within-subjects study with eight hepatobiliary surgeons, relative to a desktop baseline on controlled planning tasks. <a href="#evaluation">Details</a></p></div>
+    </div>
+
+    <div class="abstract split">
+      <h3 class="split-aside mono-label">Abstract</h3>
+      <div class="split-main">
+        <p class="abstract-lead">Anatomical liver resection (ALR) surgery is the most important treatment for liver cancer, yet preoperative planning demands complex, multi-stage clinical reasoning under competing safety constraints. Current 2D desktop tools are not well equipped to support this process, exhibiting three fundamental limitations: reliance on monolithic interfaces that fail to adapt to the distinct cognitive demands of each planning stage; a perceptual bottleneck caused by limited anatomical spatial representation and missing plane-vessel intersection visualization; and an attention bottleneck stemming from fragmented critical safety criteria display across separate views.</p>
+        <details class="more">
+          <summary><span class="when-closed">Read the full abstract</span><span class="when-open">Show less</span></summary>
+          <p>We present LiverPlan, a stage-adaptive immersive visual analytics framework for ALR planning, grounded in an 8-month collaboration with two expert hepatobiliary surgeons. Decomposing the surgical planning process into three sequential yet cognitively distinct stages, LiverPlan externalizes the cognitive demand of each stage via tailored techniques: (1) context-preserving focus and hue-preserving rendering for anatomical discovery; (2) direct 3D resection plane manipulation coupled with real-time, embedded visual feedback on critical safety criteria during plan refinement; (3) and explicit plane-vessel intersection visualization for anticipatory surgery preparation.</p>
+          <p>A within-subjects study with eight hepatobiliary surgeons against a desktop baseline shows large-effect-size improvements in task completion time, perceived cognitive workload, and system usability on controlled planning tasks. Moreover, our study reveals broader insights: LiverPlan reduces cognitive burden and encourages a shift in surgeons from merely satisfying safety criteria to actively optimizing them, suggesting that explicit visualization of spatial relationships lowers the cognitive barrier to complex surgical planning.</p>
+        </details>
       </div>
     </div>
-    <div class="task-abstraction"><div class="abstraction-copy"><h3>From clinical practice to visualization tasks.</h3><p>The <em>Multi-Level Typology of Abstract Visualization Tasks</em> guided the translation of clinical findings into a cognitively grounded workflow, informing three design goals and five design requirements.</p></div><div class="task-triad"><div><strong>Why</strong><span>The analytical goal</span></div><div><strong>How</strong><span>The actions performed</span></div><div><strong>What</strong><span>The inputs and outputs</span></div></div></div>
-    <figure class="workflow-figure"><button class="figure-open" type="button" data-title="Cognitively grounded planning workflow" data-caption="Clinical inputs, analytical goals, and domain tasks connect the three stages to five design requirements." aria-label="Enlarge the design study workflow"><img src="assets/figures/design-study-workflow.png" alt="Cognitively grounded planning workflow derived from the design study: clinical inputs, goals, domain tasks, and design requirements across three stages." loading="lazy"><span class="zoom-hint" aria-hidden="true">Explore the workflow <span>↗</span></span></button><figcaption>Clinical inputs, analytical goals, and domain tasks connect the three stages to five design requirements.</figcaption></figure>
   </section>
 
-  <section class="evaluation-section" id="evaluation" aria-labelledby="evaluation-title"><div class="section-wrap">
-    <div class="section-heading"><p class="section-kicker">Evaluation</p><h2 id="evaluation-title">Evaluated with<br>hepatobiliary surgeons.</h2><p>Eight surgeons completed controlled planning tasks using LiverPlan and a configured 3D Slicer desktop baseline in a counterbalanced within-subjects study.</p></div>
-    <div class="metric-row"><div class="metric"><strong>51.69<span>%</span></strong><span>Lower task completion time</span><small>Overall planning tasks</small></div><div class="metric"><strong>32.63<span>%</span></strong><span>Lower perceived workload</span><small>Weighted NASA-TLX</small></div><div class="metric"><strong>76.25</strong><span>System Usability Scale score</span><small>Compared with 38.44 for the desktop baseline</small></div></div>
-    <p class="study-context">Results are relative to the desktop baseline on controlled planning tasks across four clinical cases and two complexity levels.</p>
-    <div class="results-tabs" role="tablist" aria-label="Evaluation evidence"><button id="results-tab-plots" role="tab" aria-selected="true" aria-controls="results-panel" data-result="plots">Workload &amp; completion time</button><button id="results-tab-table" role="tab" aria-selected="false" aria-controls="results-panel" tabindex="-1" data-result="table">Full quantitative results</button></div>
-    <div id="results-panel" role="tabpanel" aria-labelledby="results-tab-plots" tabindex="0"><figure class="results-figure"><button class="figure-open" type="button" data-title="Workload and task completion time" data-caption="Perceived workload and task completion time, overall and by experimental task. Solid lines indicate medians." aria-label="Enlarge the evaluation plots"><img id="results-image" src="assets/figures/evaluation-results.png" alt="Boxplots comparing perceived workload and task completion time for LiverPlan and the desktop baseline, overall and by task." loading="lazy"><span class="zoom-hint" aria-hidden="true">View full size <span>↗</span></span></button><figcaption id="results-caption">Perceived workload and task completion time, overall and by experimental task. Solid lines indicate medians.</figcaption></figure></div>
-  </div></section>
+  <!-- 02 Design study -->
+  <section class="band-white" id="design-study" aria-labelledby="design-title">
+    <div class="section wrap">
+      <div class="section-head"><span class="num">02</span><h2 id="design-title">Design Study</h2></div>
+      <p class="lede">LiverPlan was developed through <b>eight months of collaboration with two hepatobiliary surgeons</b>: an attending surgeon with 18 years of experience and a resident surgeon with five years of experience.</p>
 
-  <section class="section-wrap" id="resources" aria-labelledby="resources-title">
-    <div class="resource-heading"><p class="section-kicker">Explore the research</p><h2 id="resources-title">The paper. The full demonstration.<br>The complete study.</h2><p>Read the method and evaluation in full, or watch the complete recorded planning example.</p></div>
-    <div class="resource-links"><a class="button primary" href="https://arxiv.org/abs/2608.04707" target="_blank" rel="noopener noreferrer">Paper (arXiv) <span aria-hidden="true">↗</span></a><a class="button secondary" href="https://osf.io/k8v3n/overview?view_only=3249373f8f974d6196b687b136ac8f2e" target="_blank" rel="noopener noreferrer">Demo Video &amp; Supplementary Material <span aria-hidden="true">↗</span></a></div>
-    <div class="citation-block"><div class="citation-heading"><h3>Citation</h3><button class="copy-button" id="copy-citation" type="button">Copy BibTeX</button></div><pre><code id="bibtex">@article{liu2026liverplan,
+      <div class="phases">
+        <article class="phase">
+          <div class="phase-head"><h3>Clinical Discovery</h3><span>12 WEEKS</span></div>
+          <p>Interviews, surgical planning seminars, and observation of a live liver resection surgery helped characterize clinical practices and identify visualization bottlenecks in existing 2D desktop planning tools.</p>
+          <ul class="phase-facts">
+            <li><b>11</b>bi-weekly interviews</li>
+            <li><b>4</b>planning seminars</li>
+            <li><b>3 h</b>live surgery observed</li>
+          </ul>
+        </article>
+        <article class="phase">
+          <div class="phase-head"><h3>Iterative Design &amp; Refinement</h3><span>20 WEEKS</span></div>
+          <p>Repeated design sessions and consultations with the resident surgeon, together with validation meetings with the attending surgeon, guided the development of the framework.</p>
+          <ul class="phase-facts">
+            <li><b>11</b>bi-weekly design sessions</li>
+            <li><b>15</b>ad-hoc consultations</li>
+            <li><b>3</b>validation meetings</li>
+          </ul>
+        </article>
+      </div>
+
+      <div class="abstraction split">
+        <h3 class="split-aside">From clinical practice to three design goals.</h3>
+        <p class="split-main">We used the <i>Multi-Level Typology of Abstract Visualization Tasks</i> to translate clinical findings into analytical tasks: <b>why</b> each task is performed, <b>how</b> it is carried out, and <b>what</b> inputs and outputs it involves. The resulting cognitively grounded workflow comprises three distinct stages and informed three design goals and five design requirements.</p>
+      </div>
+
+      <div class="goals">
+        <div class="goal" data-stage="1">
+          <p class="goal-tag"><span class="dot"></span>G1 · STAGE 1</p>
+          <p class="goal-name">Externalize Spatial Perception for Anatomical Discovery</p>
+          <p class="goal-reqs">R1 Context-Preserving Focus · R2 Color Fidelity</p>
+        </div>
+        <div class="goal" data-stage="2">
+          <p class="goal-tag"><span class="dot"></span>G2 · STAGE 2</p>
+          <p class="goal-name">Streamline Multi-Constraint Resection Planning</p>
+          <p class="goal-reqs">R3 Direct Spatial Interaction · R4 Embedded Visual Feedback</p>
+        </div>
+        <div class="goal" data-stage="3">
+          <p class="goal-tag"><span class="dot"></span>G3 · STAGE 3</p>
+          <p class="goal-name">Support Anticipatory Mental Model Construction</p>
+          <p class="goal-reqs">R5 Explicit Plane-Vessel Intersection Visualization</p>
+        </div>
+      </div>
+
+      <figure class="workflow-figure">
+        <button class="figure-open" type="button" data-title="Cognitively grounded planning workflow" data-caption="Clinical inputs, analytical goals, and domain tasks connect the three stages to five design requirements." aria-label="Enlarge the design study workflow">
+          <img src="assets/figures/design-study-workflow.png" alt="Cognitively grounded planning workflow: clinical inputs, analytical goals, domain tasks, and five design requirements across three stages." loading="lazy">
+          <span class="zoom-hint" aria-hidden="true">View full size</span>
+        </button>
+        <figcaption class="cap"><b>Cognitively grounded planning workflow.</b> Clinical inputs, analytical goals, and domain tasks connect the three stages to five design requirements. Click to enlarge.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <!-- 03 Method -->
+  <section id="method" aria-labelledby="method-title">
+    <div class="section method-intro wrap">
+      <div class="section-head"><span class="num">03</span><h2 id="method-title">Method</h2></div>
+      <p class="lede">Anatomical liver resection planning moves from understanding complex anatomy to balancing safety criteria and preparing for surgery. LiverPlan adapts visualization and interaction to the cognitive demands of each stage.</p>
+    </div>
+
+    <!-- Stage 1 -->
+    <section class="stage wrap" id="stage-1" data-stage="1" aria-labelledby="stage-1-title">
+      <div class="split stage-grid">
+        <div class="stage-side">
+          <p class="stage-num" aria-hidden="true">1</p>
+          <h3 id="stage-1-title"><span class="sr-only">Stage 1: </span>Tumor-Vessel Spatial Analysis</h3>
+          <p>Anatomical discovery to identify candidate target liver segments for resection.</p>
+          <div class="stage-reqs">
+            <span><b>G1</b>Externalize Spatial Perception</span>
+            <span><b>R1</b>Context-Preserving Focus</span>
+            <span><b>R2</b>Maintain Color Fidelity</span>
+          </div>
+        </div>
+        <div class="split-main stage-main">
+          <div>
+            <p class="mono-label is-stage">Key contribution</p>
+            <h4 class="key-title">Enhanced visualization of tumor-vessel spatial relationships.</h4>
+            <figure class="block-figure">
+              <button class="figure-open tight" type="button" data-title="Stage 1 · Anatomical representations" data-caption="(a) Macroscopic representations. (b) Microscopic vessel representations. (c) Standard vs. hue-preserving rendering." aria-label="Enlarge: anatomical representations">
+                <img src="assets/figures/stage1-anatomical-representations.png" alt="Stage 1 visualization designs: macroscopic anatomical representations, microscopic vessel representations, and a comparison of standard and hue-preserving rendering." loading="lazy">
+                <span class="zoom-hint" aria-hidden="true">View full size</span>
+              </button>
+            </figure>
+            <ol class="legend">
+              <li><b><span class="tag">(a)</span> Macroscopic representations</b>Whole-liver and liver-segment views support inspection of tumor invasion and individual segment morphology.</li>
+              <li><b><span class="tag">(b)</span> Microscopic representations</b>Adjustable vessel thickness exposes deep tumor-vessel relationships while preserving vascular context.</li>
+              <li><b><span class="tag">(c)</span> Hue-preserving rendering</b>Selective desaturation of overlapping outer liver surfaces preserves the diagnostic colors of internal vessels and tumors.</li>
+            </ol>
+          </div>
+
+          <div>
+            <p class="mono-label">In LiverPlan · recorded demos</p>
+            <div class="video-grid">
+              <figure>
+                <video controls muted loop playsinline preload="metadata" poster="assets/media/stage1-macroscopic.jpg" aria-label="Recorded demonstration: anatomical views"><source src="assets/media/stage1-macroscopic.mp4" type="video/mp4"><a href="assets/media/stage1-macroscopic.mp4">Open the demonstration.</a></video>
+                <figcaption class="vcap"><b>Anatomical views.</b> Switch between representations to inspect the tumor and individual liver segments.</figcaption>
+              </figure>
+              <figure>
+                <video controls muted loop playsinline preload="metadata" poster="assets/media/stage1-microscopic.jpg" aria-label="Recorded demonstration: vessel relationships"><source src="assets/media/stage1-microscopic.mp4" type="video/mp4"><a href="assets/media/stage1-microscopic.mp4">Open the demonstration.</a></video>
+                <figcaption class="vcap"><b>Vessel relationships.</b> Reduce vessel thickness to reveal internal tumor-vessel relationships.</figcaption>
+              </figure>
+              <figure>
+                <video controls muted loop playsinline preload="metadata" poster="assets/media/stage1-target-selection.jpg" aria-label="Recorded demonstration: target segment selection"><source src="assets/media/stage1-target-selection.mp4" type="video/mp4"><a href="assets/media/stage1-target-selection.mp4">Open the demonstration.</a></video>
+                <figcaption class="vcap"><b>Target selection.</b> The selection panel and 3D anatomy stay linked.</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <div class="media-row">
+            <div class="copy">
+              <h4>Target segment selection</h4>
+              <p>Surgeons select and revise target liver segments through a dedicated panel linked to the 3D anatomical view. In the illustrated case, spatial analysis leads from initially highlighted segments 4, 5, and 8 to the selection of segments 5 and 8.</p>
+            </div>
+            <button class="figure-open tight wide" type="button" data-title="Stage 1 · Target segment selection" data-caption="Highlighted candidate segments 4, 5, and 8, followed by surgeon selection of segments 5 and 8." aria-label="Enlarge: target segment selection">
+              <img src="assets/figures/stage1-target-segment-selection.png" alt="Target segment selection: candidate segments 4, 5, and 8, followed by surgeon selection of segments 5 and 8." loading="lazy">
+              <span class="zoom-hint" aria-hidden="true">View full size</span>
+            </button>
+          </div>
+
+          <aside class="evidence" aria-label="Stage 1 in the user study">
+            <p class="mono-label is-stage">In the user study</p>
+            <dl class="ev-stats">
+              <div><dt>−56.30%</dt><dd>Task time, E1 Tumor Spatial Analysis · p &lt; 0.05</dd></div>
+              <div><dt>4.50<span>/5</span></dt><dd>Internal structure visibility clarity</dd></div>
+              <div><dt>4.75<span>/5</span></dt><dd>Target segment selection panel</dd></div>
+            </dl>
+            <blockquote class="serif-quote">“The skeletonized vessels made branching patterns easier to inspect without losing context” <cite>P5</cite></blockquote>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stage 2 -->
+    <section class="stage wrap" id="stage-2" data-stage="2" aria-labelledby="stage-2-title">
+      <div class="split stage-grid">
+        <div class="stage-side">
+          <p class="stage-num" aria-hidden="true">2</p>
+          <h3 id="stage-2-title"><span class="sr-only">Stage 2: </span>Interactive Resection Planning</h3>
+          <p>Surgeons grab, move, and rotate resection planes directly in 3D to refine the plan against safety criteria.</p>
+          <div class="stage-reqs">
+            <span><b>G2</b>Streamline Multi-Constraint Planning</span>
+            <span><b>R3</b>Direct Spatial Interaction</span>
+            <span><b>R4</b>Embedded Visual Feedback</span>
+          </div>
+        </div>
+        <div class="split-main stage-main">
+          <div>
+            <p class="mono-label is-stage">Key contribution</p>
+            <h4 class="key-title">Real-time, embedded visual feedback on critical safety criteria.</h4>
+            <p class="key-copy">Constraint status stays within the focused 3D view during resection plane manipulation, so surgeons can compare safety criteria and trade them off without shifting attention.</p>
+            <div class="media-row top block-figure">
+              <button class="figure-open tight mid" type="button" data-title="Stage 2 · Embedded safety criteria visualization" data-caption="Functional Liver Remnant, Resection Margin, and Target Segment Complete Removal visualized close to the anatomy." aria-label="Enlarge: embedded safety criteria visualization">
+                <img src="assets/figures/stage2-embedded-visual-feedback.png" alt="Embedded safety criteria visualization: overview, FLR outline, TSCR contours, and two RM feedback modes." loading="lazy">
+                <span class="zoom-hint" aria-hidden="true">View full size</span>
+              </button>
+              <ul class="criteria">
+                <li><span class="abbr">FLR</span><span><b>Functional Liver Remnant</b><span class="d">A semi-transparent, color-coded remnant outline and a floating numerical indicator.</span></span></li>
+                <li><span class="abbr">RM</span><span><b>Resection Margin</b><span class="d">A connector line with a disk indicator or a surface distance map on the active resection plane.</span></span></li>
+                <li><span class="abbr">TSCR</span><span><b>Target Segment Complete Removal</b><span class="d">Dynamic contours indicate whether a resection plane intersects a target segment, warning of incomplete removal.</span></span></li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <p class="mono-label">Case study · one plan, two attempts</p>
+            <p class="case-copy">A tumor located primarily in segment 8 and extending into segments 5 and 4. Embedded feedback exposes a remnant that is too small, and the surgeon changes strategy.</p>
+            <div class="attempts">
+              <figure class="attempt">
+                <div class="attempt-head"><span>Attempt 1 · Segments 5 + 8, two planes</span><span class="badge fail">FLR too low</span></div>
+                <video controls muted playsinline preload="metadata" poster="assets/media/stage2-two-planes.jpg" aria-label="Recorded demonstration: two-plane plan for segments 5 and 8"><source src="assets/media/stage2-two-planes.mp4" type="video/mp4"><a href="assets/media/stage2-two-planes.mp4">Open the demonstration.</a></video>
+                <figcaption class="vcap">FLR, RM, and TSCR feedback updates as the planes move. The plan leaves too little liver, and the FLR feedback turns red.</figcaption>
+              </figure>
+              <figure class="attempt">
+                <div class="attempt-head"><span>Attempt 2 · Segment 8, three planes</span><span class="badge pass">Plan finalized</span></div>
+                <video controls muted playsinline preload="metadata" poster="assets/media/stage2-three-planes.jpg" aria-label="Recorded demonstration: three-plane plan for segment 8"><source src="assets/media/stage2-three-planes.mp4" type="video/mp4"><a href="assets/media/stage2-three-planes.mp4">Open the demonstration.</a></video>
+                <figcaption class="vcap">The target changes to segment 8 and a third plane is added. Planes are refined against FLR, RM, and TSCR until the plan is finalized.</figcaption>
+              </figure>
+            </div>
+            <figure class="case-figure">
+              <button class="figure-open tight" type="button" data-title="Stage 2 · Case study" data-caption="(a) Default view. (b) Two planes introduced. (c) The plan for segments 5 and 8 violates FLR. (d) The target changes to segment 8 only. (e) The finalized three-plane plan satisfies all safety criteria." aria-label="Enlarge: Stage 2 case study">
+                <img src="assets/figures/stage2-case-study.png" alt="Five panels: the default view, two planes introduced, a two-plane plan with FLR violation, the target changed to segment 8 only, and the finalized three-plane plan." loading="lazy">
+                <span class="zoom-hint" aria-hidden="true">View full size</span>
+              </button>
+              <figcaption class="cap small"><b>The same decision path in the paper.</b> (a) Default view. (b) Two planes introduced. (c) The plan for segments 5 and 8 violates FLR. (d) The target changes to segment 8 only. (e) The finalized three-plane plan satisfies all safety criteria. On-screen readouts in the recording differ slightly from the values reported in the paper.</figcaption>
+            </figure>
+          </div>
+
+          <aside class="evidence" aria-label="Stage 2 in the user study">
+            <p class="mono-label is-stage">In the user study · E3 Resection Planning</p>
+            <dl class="ev-stats">
+              <div><dt>−61.79%</dt><dd>Task completion time · p &lt; 0.001</dd></div>
+              <div><dt>−44.72%</dt><dd>Perceived workload · p &lt; 0.05</dd></div>
+              <div><dt>+27.33%</dt><dd>Confidence rating · p &lt; 0.05</dd></div>
+            </dl>
+            <blockquote class="serif-quote">“The RM visualization made the critical shortest distance much easier to judge” <cite>P4</cite></blockquote>
+          </aside>
+        </div>
+      </div>
+    </section>
+
+    <!-- Stage 3 -->
+    <section class="stage wrap" id="stage-3" data-stage="3" aria-labelledby="stage-3-title">
+      <div class="split stage-grid">
+        <div class="stage-side">
+          <p class="stage-num" aria-hidden="true">3</p>
+          <h3 id="stage-3-title"><span class="sr-only">Stage 3: </span>Plane-Vessel Intersection Analysis</h3>
+          <p>Surgery preparation: understand the vascular implications of the finalized plan.</p>
+          <div class="stage-reqs">
+            <span><b>G3</b>Anticipatory Mental Model</span>
+            <span><b>R5</b>Explicit Intersection Visualization</span>
+          </div>
+        </div>
+        <div class="split-main stage-main">
+          <div>
+            <p class="mono-label is-stage">Key contribution</p>
+            <h4 class="key-title">Enhanced spatial understanding of the resection plan.</h4>
+            <p class="key-copy">Focus+Context plane-vessel intersection visualization shows which portions of the vasculature are resected or preserved, where resection planes intersect vessels, and the caliber of the intersected branches.</p>
+            <figure class="block-figure">
+              <button class="figure-open tight" type="button" data-title="Stage 3 · Plane-vessel intersection visualization" data-caption="Gray distinguishes resected branches; preserved branches retain diagnostic hues. True-scale red collars reveal intersection locations and vessel caliber." aria-label="Enlarge: plane-vessel intersection visualization">
+                <img src="assets/figures/stage3-plane-vessel-intersections.png" alt="Plane-vessel intersection visualization: anatomical overview, Default and Inversion context views, and magnified true-scale red intersection collars." loading="lazy">
+                <span class="zoom-hint" aria-hidden="true">View full size</span>
+              </button>
+            </figure>
+            <div class="media-row top block-figure">
+              <ul class="legend-col">
+                <li><b><span class="tag">(b)</span> Context-aware skeletonized vessel display</b>Resected branches appear in desaturated gray, while preserved branches retain their diagnostic hues.</li>
+                <li><b><span class="tag">(c)</span> Intersection highlighting</b>True-scale translucent red collars mark precise plane-vessel intersections and reveal the caliber of the intersected branches.</li>
+              </ul>
+              <figure class="vid">
+                <video controls muted loop playsinline preload="metadata" poster="assets/media/stage3-intersections.jpg" aria-label="Recorded demonstration: inspect the finalized plan"><source src="assets/media/stage3-intersections.mp4" type="video/mp4"><a href="assets/media/stage3-intersections.mp4">Open the demonstration.</a></video>
+                <figcaption class="vcap"><b>In LiverPlan.</b> Rotate the finalized anatomy to inspect its vascular context.</figcaption>
+              </figure>
+            </div>
+          </div>
+
+          <aside class="evidence" aria-label="Stage 3 in the user study">
+            <p class="mono-label is-stage">In the user study</p>
+            <dl class="ev-stats">
+              <div><dt>4.75<span>/5</span></dt><dd>Intersection highlighting</dd></div>
+              <div><dt>4.25<span>/5</span></dt><dd>Context-aware skeletonized vessel display</dd></div>
+              <div><dt>−23.92%</dt><dd>Perceived workload, E4 · n.s.</dd></div>
+            </dl>
+            <blockquote class="serif-quote">“the explicit intersection cues made critical vessel encounters easier to identify before surgery” <cite>P5 and P8</cite></blockquote>
+          </aside>
+        </div>
+      </div>
+    </section>
+  </section>
+
+  <!-- 04 Evaluation -->
+  <section id="evaluation" aria-labelledby="evaluation-title">
+    <div class="eval-band">
+      <div class="section wrap">
+        <div class="section-head"><span class="num">04</span><h2 id="evaluation-title">Evaluation</h2></div>
+        <p class="lede">Eight hepatobiliary surgeons completed controlled planning tasks using LiverPlan and a configured 3D Slicer desktop baseline in a counterbalanced within-subjects study.</p>
+        <div class="metrics">
+          <div class="metric"><p class="val">51.69<span>%</span></p><p class="label">Lower task completion time</p><small>Overall planning tasks · d = 1.86</small></div>
+          <div class="metric"><p class="val">32.63<span>%</span></p><p class="label">Lower perceived workload</p><small>Weighted NASA-TLX · d = 0.92</small></div>
+          <div class="metric"><p class="val">76.25</p><p class="label">System Usability Scale score</p><small>vs. 38.44 for the desktop baseline · d = 1.89</small></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="wrap">
+      <section class="eval-block split" aria-labelledby="study-design-title">
+        <div class="split-aside">
+          <h3 id="study-design-title">Study design</h3>
+          <p>Each participant completed the full planning workflow, Stage 1 to Stage 3, for every case.</p>
+        </div>
+        <div class="split-main">
+          <dl class="facts">
+            <div><dt>Participants</dt><dd>8 hepatobiliary surgeons from two partner hospitals: 3 attending and 5 resident surgeons, mean age 27.88 years (SD 3.23).</dd></div>
+            <div><dt>Baseline</dt><dd>3D Slicer, configured to reproduce the task-relevant functions of the commercial planning software used by the collaborating surgeons.</dd></div>
+            <div><dt>Cases &amp; order</dt><dd>Four clinical cases at two complexity levels, split into two case groups counterbalanced across platforms. Half of the participants used LiverPlan first.</dd></div>
+            <div><dt>Measures &amp; analysis</dt><dd>Task time, NASA-TLX, confidence, Likert ratings, SUS, and interviews. Paired t-tests, Wilcoxon signed-rank tests, Cohen’s d.</dd></div>
+          </dl>
+          <ol class="tasks" aria-label="Experimental tasks">
+            <li data-stage="1"><b>E1</b> Tumor Spatial Analysis</li>
+            <li data-stage="1"><b>E2</b> Vascular Architecture Analysis</li>
+            <li data-stage="2"><b>E3</b> Resection Planning</li>
+            <li data-stage="3"><b>E4</b> Plane-Vessel Intersection Analysis</li>
+          </ol>
+          <details class="more participants">
+            <summary><span class="when-closed">Show participant table</span><span class="when-open">Hide participant table</span></summary>
+            <div class="table-wrap">
+              <table class="data-table participants-table">
+                <caption class="sr-only">Participants</caption>
+                <thead><tr><th scope="col">ID</th><th scope="col">Gender</th><th scope="col">Age</th><th scope="col">Clinical experience</th><th scope="col">XR experience</th></tr></thead>
+                <tbody>
+                  <tr><td>P1</td><td>Male</td><td>25</td><td>Resident (PGY1)</td><td>None</td></tr>
+                  <tr><td>P2</td><td>Male</td><td>31</td><td>Attending (2 years)</td><td>Limited</td></tr>
+                  <tr><td>P3</td><td>Male</td><td>27</td><td>Resident (PGY4)</td><td>Limited</td></tr>
+                  <tr><td>P4</td><td>Male</td><td>34</td><td>Attending (3 years)</td><td>Limited</td></tr>
+                  <tr><td>P5</td><td>Male</td><td>26</td><td>Resident (PGY1)</td><td>Limited</td></tr>
+                  <tr><td>P6</td><td>Female</td><td>25</td><td>Resident (PGY1)</td><td>Limited</td></tr>
+                  <tr><td>P7</td><td>Male</td><td>29</td><td>Attending (2 years)</td><td>None</td></tr>
+                  <tr><td>P8</td><td>Female</td><td>26</td><td>Resident (PGY2)</td><td>Familiar</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="table-foot">PGY: postgraduate year of training. All studies were approved by the Joint CUHK–NTEC Clinical Research Ethics Committee (CREC 2022.142).</p>
+          </details>
+        </div>
+      </section>
+
+      <section class="eval-block split" aria-labelledby="task-performance-title">
+        <div class="split-aside">
+          <h3 id="task-performance-title">Task performance</h3>
+          <p>Completion time, workload, and confidence for the whole workflow and each stage. Mean ± SD. Significant results are highlighted.</p>
+        </div>
+        <div class="split-main">
+          <div class="table-wrap">
+            <table class="data-table results-table">
+              <caption class="sr-only">Task performance metrics and subjective confidence ratings</caption>
+              <thead><tr><th scope="col">Metric</th><th scope="col" class="num">LiverPlan</th><th scope="col" class="num">Desktop</th><th scope="col" class="num">Change</th><th scope="col" class="num">Sig.</th></tr></thead>
+              <tbody data-stage="0">
+                <tr class="scope"><th scope="rowgroup" colspan="5"><span class="lbl"><span class="dot"></span>Overall framework</span><span class="sub">E1–E4 combined</span></th></tr>
+                <tr class="is-sig"><th scope="row">SUS score<span class="dir">↑</span></th><td class="num">76.25<span class="sd">± 13.43</span></td><td class="num">38.44<span class="sd">± 16.90</span></td><td class="num change">+98.36%</td><td class="num sig-cell">***</td></tr>
+                <tr class="is-sig"><th scope="row">Perceived workload<span class="dir">↓</span></th><td class="num">21.97<span class="sd">± 13.74</span></td><td class="num">32.61<span class="sd">± 13.89</span></td><td class="num change">−32.63%</td><td class="num sig-cell">*</td></tr>
+                <tr class="is-sig"><th scope="row">Task completion time (s)<span class="dir">↓</span></th><td class="num">203.88<span class="sd">± 131.84</span></td><td class="num">422.00<span class="sd">± 166.38</span></td><td class="num change">−51.69%</td><td class="num sig-cell">***</td></tr>
+                <tr><th scope="row">Confidence rating<span class="dir">↑</span></th><td class="num">4.22<span class="sd">± 0.73</span></td><td class="num">3.84<span class="sd">± 0.77</span></td><td class="num change">+9.90%</td><td class="num sig-cell">n.s.</td></tr>
+              </tbody>
+              <tbody data-stage="1">
+                <tr class="scope"><th scope="rowgroup" colspan="5"><span class="lbl"><span class="dot"></span>Stage 1</span><span class="sub">Tumor-Vessel Spatial Analysis</span></th></tr>
+                <tr class="task"><th colspan="5">E1 · Tumor Spatial Analysis</th></tr>
+                <tr><th scope="row">Spatial understanding<span class="dir">↑</span></th><td class="num">100% pass</td><td class="num">100% pass</td><td class="num change">No difference</td><td class="num sig-cell">n.a.</td></tr>
+                <tr class="is-sig"><th scope="row">Task completion time (s)<span class="dir">↓</span></th><td class="num">32.56<span class="sd">± 20.42</span></td><td class="num">74.50<span class="sd">± 43.49</span></td><td class="num change">−56.30%</td><td class="num sig-cell">*</td></tr>
+                <tr><th scope="row">Confidence rating<span class="dir">↑</span></th><td class="num">4.44<span class="sd">± 0.56</span></td><td class="num">4.31<span class="sd">± 0.65</span></td><td class="num change">+2.9%</td><td class="num sig-cell">n.s.</td></tr>
+                <tr class="task"><th colspan="5">E2 · Vascular Architecture Analysis</th></tr>
+                <tr><th scope="row">Variant detection rate<span class="dir">↑</span></th><td class="num">100%</td><td class="num">100%</td><td class="num change">No difference</td><td class="num sig-cell">n.a.</td></tr>
+                <tr><th scope="row">Task completion time (s)<span class="dir">↓</span></th><td class="num">28.94<span class="sd">± 29.03</span></td><td class="num">35.81<span class="sd">± 28.19</span></td><td class="num change">−19.18%</td><td class="num sig-cell">n.s.</td></tr>
+                <tr><th scope="row">Confidence rating<span class="dir">↑</span></th><td class="num">4.00<span class="sd">± 0.89</span></td><td class="num">4.00<span class="sd">± 0.71</span></td><td class="num change">No difference</td><td class="num sig-cell">n.s.</td></tr>
+                <tr class="task"><th colspan="5">E1 &amp; E2 combined</th></tr>
+                <tr><th scope="row">Perceived workload<span class="dir">↓</span></th><td class="num">21.46<span class="sd">± 14.71</span></td><td class="num">32.61<span class="sd">± 13.89</span></td><td class="num change">−25.95%</td><td class="num sig-cell">n.s.</td></tr>
+              </tbody>
+              <tbody data-stage="2">
+                <tr class="scope"><th scope="rowgroup" colspan="5"><span class="lbl"><span class="dot"></span>Stage 2</span><span class="sub">Interactive Resection Planning</span></th></tr>
+                <tr class="task"><th colspan="5">E3 · Resection Planning</th></tr>
+                <tr class="is-sig"><th scope="row">Perceived workload<span class="dir">↓</span></th><td class="num">21.10<span class="sd">± 13.58</span></td><td class="num">38.17<span class="sd">± 16.11</span></td><td class="num change">−44.72%</td><td class="num sig-cell">*</td></tr>
+                <tr class="is-sig"><th scope="row">Task completion time (s)<span class="dir">↓</span></th><td class="num">102.50<span class="sd">± 67.96</span></td><td class="num">268.25<span class="sd">± 117.76</span></td><td class="num change">−61.79%</td><td class="num sig-cell">***</td></tr>
+                <tr class="is-sig"><th scope="row">Confidence rating<span class="dir">↑</span></th><td class="num">4.38<span class="sd">± 0.84</span></td><td class="num">3.44<span class="sd">± 0.98</span></td><td class="num change">+27.33%</td><td class="num sig-cell">*</td></tr>
+              </tbody>
+              <tbody data-stage="3">
+                <tr class="scope"><th scope="rowgroup" colspan="5"><span class="lbl"><span class="dot"></span>Stage 3</span><span class="sub">Plane-Vessel Intersection Analysis</span></th></tr>
+                <tr class="task"><th colspan="5">E4 · Plane-Vessel Intersection Analysis</th></tr>
+                <tr><th scope="row">Perceived workload<span class="dir">↓</span></th><td class="num">23.35<span class="sd">± 14.29</span></td><td class="num">30.69<span class="sd">± 15.21</span></td><td class="num change">−23.92%</td><td class="num sig-cell">n.s.</td></tr>
+                <tr><th scope="row">Task completion time (s)<span class="dir">↓</span></th><td class="num">39.88<span class="sd">± 32.45</span></td><td class="num">43.44<span class="sd">± 17.29</span></td><td class="num change">−8.20%</td><td class="num sig-cell">n.s.</td></tr>
+                <tr><th scope="row">Confidence rating<span class="dir">↑</span></th><td class="num">4.06<span class="sd">± 1.02</span></td><td class="num">3.62<span class="sd">± 0.88</span></td><td class="num change">+12.15%</td><td class="num sig-cell">n.s.</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <p class="table-foot">*** p &lt; 0.001, ** p &lt; 0.01, * p &lt; 0.05, n.s. not significant, n.a. not applicable. ↑ higher is better; ↓ lower is better. Change is the percentage change from the desktop system to LiverPlan.</p>
+          <figure class="results-figure">
+            <button class="figure-open tight" type="button" data-title="Workload and task completion time" data-caption="(a) Overall weighted perceived workload (NASA-TLX). (b) Task completion time of all experimental tasks. Solid lines indicate medians." aria-label="Enlarge: workload and task completion time">
+              <img src="assets/figures/evaluation-results.png" alt="Boxplots comparing perceived workload and task completion time for LiverPlan and the desktop baseline." loading="lazy">
+              <span class="zoom-hint" aria-hidden="true">View full size</span>
+            </button>
+            <figcaption class="cap small">(a) Overall weighted perceived workload (NASA-TLX). (b) Task completion time of all experimental tasks. Solid lines indicate medians.</figcaption>
+          </figure>
+        </div>
+      </section>
+
+      <section class="eval-block split" aria-labelledby="ratings-title">
+        <div class="split-aside">
+          <h3 id="ratings-title">Post-study ratings</h3>
+          <p>Five-point Likert ratings. Dots mark the mean; bars span ± 1 SD within the scale.</p>
+        </div>
+        <div class="split-main ratings">
+          <div class="rating-group" data-stage="1">
+            <h4><span class="dot"></span>Stage 1 <span>Tumor-Vessel Spatial Analysis</span></h4>
+            <ul>
+              <li class="rating" style="--m: 4.25; --sd: .89"><span>Macroscopic liver analysis modes</span><span class="rating-bar"><i class="sd"></i><i class="mean"></i></span><span class="rating-value">4.25</span></li>
+              <li class="rating" style="--m: 4.00; --sd: .76"><span>Microscopic vessel analysis modes</span><span class="rating-bar"><i class="sd"></i><i class="mean"></i></span><span class="rating-value">4.00</span></li>
+              <li class="rating" style="--m: 4.50; --sd: .76"><span>Internal structure visibility clarity</span><span class="rating-bar"><i class="sd"></i><i class="mean"></i></span><span class="rating-value">4.50</span></li>
+              <li class="rating" style="--m: 4.75; --sd: .46"><span>Target segment selection panel</span><span class="rating-bar"><i class="sd"></i><i class="mean"></i></span><span class="rating-value">4.75</span></li>
+            </ul>
+          </div>
+          <div class="rating-group" data-stage="2">
+            <h4><span class="dot"></span>Stage 2 <span>Interactive Resection Planning</span></h4>
+            <ul>
+              <li class="rating" style="--m: 4.38; --sd: 1.19"><span>Direct 3D interaction</span><span class="rating-bar"><i class="sd"></i><i class="mean"></i></span><span class="rating-value">4.38</span></li>
+              <li class="rating" style="--m: 4.75; --sd: .46"><span>Embedded FLR visual feedback</span><span class="rating-bar"><i class="sd"></i><i class="mean"></i></span><span class="rating-value">4.75</span></li>
+              <li class="rating" style="--m: 4.88; --sd: .35"><span>Embedded RM visual feedback</span><span class="rating-bar"><i class="sd"></i><i class="mean"></i></span><span class="rating-value">4.88</span></li>
+              <li class="rating" style="--m: 4.25; --sd: .71"><span>Embedded TSCR visual feedback</span><span class="rating-bar"><i class="sd"></i><i class="mean"></i></span><span class="rating-value">4.25</span></li>
+              <li class="rating" style="--m: 4.63; --sd: .52"><span>Integrated information panel</span><span class="rating-bar"><i class="sd"></i><i class="mean"></i></span><span class="rating-value">4.63</span></li>
+            </ul>
+          </div>
+          <div class="rating-group" data-stage="3">
+            <h4><span class="dot"></span>Stage 3 <span>Plane-Vessel Intersection Analysis</span></h4>
+            <ul>
+              <li class="rating" style="--m: 4.25; --sd: 1.04"><span>Context-aware skeletonized vessel display</span><span class="rating-bar"><i class="sd"></i><i class="mean"></i></span><span class="rating-value">4.25</span></li>
+              <li class="rating" style="--m: 4.75; --sd: .46"><span>Intersection highlighting</span><span class="rating-bar"><i class="sd"></i><i class="mean"></i></span><span class="rating-value">4.75</span></li>
+            </ul>
+          </div>
+          <div class="rating-group" data-stage="0">
+            <h4><span class="dot"></span>Workflow <span>Overall validity</span></h4>
+            <ul>
+              <li class="rating" style="--m: 4.88; --sd: .35"><span>Stage 1 workflow alignment</span><span class="rating-bar"><i class="sd"></i><i class="mean"></i></span><span class="rating-value">4.88</span></li>
+              <li class="rating" style="--m: 4.50; --sd: .53"><span>Stage 2 workflow alignment</span><span class="rating-bar"><i class="sd"></i><i class="mean"></i></span><span class="rating-value">4.50</span></li>
+              <li class="rating" style="--m: 4.88; --sd: .35"><span>Stage 3 workflow alignment</span><span class="rating-bar"><i class="sd"></i><i class="mean"></i></span><span class="rating-value">4.88</span></li>
+              <li class="rating" style="--m: 4.63; --sd: .52"><span>Cross-stage logical coherence</span><span class="rating-bar"><i class="sd"></i><i class="mean"></i></span><span class="rating-value">4.63</span></li>
+              <li class="rating" style="--m: 4.75; --sd: .46"><span>Overall system experience</span><span class="rating-bar"><i class="sd"></i><i class="mean"></i></span><span class="rating-value">4.75</span></li>
+            </ul>
+          </div>
+          <div class="rating-axis" aria-hidden="true"><span></span><span class="ticks"><span>1</span><span>2</span><span>3</span><span>4</span><span>5</span></span><span></span></div>
+          <blockquote class="serif-quote pull-quote">“These three stages perfectly mirror how we actually think through surgical planning.” <cite>P3</cite></blockquote>
+        </div>
+      </section>
+
+      <section class="eval-block split" aria-labelledby="findings-title">
+        <div class="split-aside">
+          <h3 id="findings-title">Beyond the metrics</h3>
+          <p>Two broader insights from the interviews.</p>
+        </div>
+        <div class="split-main findings">
+          <article class="finding">
+            <p class="mono-label">Finding 1</p>
+            <h4>Reduced cognitive burden unlocks deeper planning engagement.</h4>
+            <p>Lower visualization and interaction costs encouraged surgeons to further check and refine, shifting them from merely satisfying constraints to optimizing them.</p>
+            <blockquote class="serif-quote">“Perhaps because this system provides more intuitive visual feedback, especially the visualization of resection margins, it made my evaluation more detailed, which actually took longer.” <cite>P1</cite></blockquote>
+          </article>
+          <article class="finding">
+            <p class="mono-label">Finding 2</p>
+            <h4>Explicit visual representations make spatial reasoning more accessible.</h4>
+            <p>Complex spatial relationships become directly observable rather than mentally reconstructed, which was particularly evident among less experienced participants.</p>
+            <blockquote class="serif-quote">“The intuitive visual representation makes it much easier to understand the spatial relationships, which would be incredibly valuable for young surgeons and medical students who are still developing their spatial reasoning skills.” <cite>P4</cite></blockquote>
+          </article>
+        </div>
+      </section>
+    </div>
+  </section>
+
+  <!-- 05 Citation -->
+  <section class="band-white" id="citation" aria-labelledby="citation-title">
+    <div class="section wrap">
+      <div class="section-head"><span class="num">05</span><h2 id="citation-title">Citation</h2></div>
+      <div class="bib">
+        <button class="copy-button" id="copy-citation" type="button">Copy BibTeX</button>
+        <pre><code id="bibtex">@article{liu2026liverplan,
   title   = {LiverPlan: A Stage-Adaptive Immersive Visual Analytics Framework for Anatomical Liver Surgical Planning},
   author  = {Qixuan Liu and Shi Qiu and Xiwen Wu and Yuqi Tong and Yinqiao Wang and Ruiyang Li and Jialun Pei and Shengdong Zhao and Chi-Wing Fu and Pheng-Ann Heng},
   journal = {arXiv preprint arXiv:2608.04707},
   year    = {2026},
   doi     = {10.48550/arXiv.2608.04707},
   url     = {https://arxiv.org/abs/2608.04707}
-}</code></pre><p class="sr-only" id="copy-status" role="status" aria-live="polite"></p></div>
+}</code></pre>
+        <p class="sr-only" id="copy-status" role="status" aria-live="polite"></p>
+      </div>
+    </div>
   </section>
 </main>
-<footer class="site-footer"><div class="section-wrap"><p><strong>LiverPlan</strong><span>IEEE VIS 2026</span></p><a href="https://github.com/qixuan-luke/LiverPlan" target="_blank" rel="noopener noreferrer">Research materials <span aria-hidden="true">↗</span></a></div></footer>
-<dialog class="figure-dialog" id="figure-dialog" aria-labelledby="dialog-title"><div class="dialog-toolbar"><h2 id="dialog-title">Research figure</h2><button class="dialog-close" type="button" aria-label="Close enlarged figure">Close <span aria-hidden="true">×</span></button></div><div class="dialog-body"><img id="dialog-image" alt=""></div><p id="dialog-caption"></p></dialog>
+
+<footer class="site-footer">
+  <div class="wrap">
+    <span><b>LiverPlan</b>IEEE VIS 2026</span>
+    <a href="https://github.com/qixuan-luke/LiverPlan" target="_blank" rel="noopener noreferrer">Research materials ↗</a>
+  </div>
+</footer>
+
+<dialog class="figure-dialog" id="figure-dialog" aria-labelledby="dialog-title">
+  <div class="dialog-toolbar">
+    <h2 id="dialog-title">Research figure</h2>
+    <button class="dialog-close" type="button" aria-label="Close enlarged figure">Close ×</button>
+  </div>
+  <div class="dialog-body"><img id="dialog-image" alt=""></div>
+  <p id="dialog-caption"></p>
+</dialog>
 </body>
 </html>
